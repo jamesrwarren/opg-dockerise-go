@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 	"os"
+	"fmt"
 )
 
 type Status struct {
@@ -36,6 +37,7 @@ func status(w http.ResponseWriter, req *http.Request) {
 	} else {
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(response)
+		fmt.Println(string(response))
 	}
 }
 
